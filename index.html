@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vera Cafe Menü</title>
+<title>Vera Cafe | Restaurant Menü</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,8 +19,8 @@
 
 <div class="overlay">
 
-<h1>🍽 Vera Cafe</h1>
-<p>QR Menü</p>
+<h1>🍽 Vera Cafe | Restaurant</h1>
+<p>Menü</p>
 
 </div>
 
@@ -279,7 +279,23 @@
 </div>
 
 <footer>
-© Vera Cafe
+    <div className="text-center text-white  bg-[#228f41] rounded-t-xl px-3 pt-1 text-xs mt-16">
+      <a
+        href="https://www.zuware.software" // kendi siten
+        target="_blank" // yeni sekmede açmak için
+        rel="noopener noreferrer" // güvenlik için
+        className="hover:underline cursor-pointer"
+      >
+        Zu<span className="text-[#febe09]">ware</span> Soft
+        <span className="text-[#febe09]">ware</span>{' '}
+        <span className="text-[#ee1a1f]">&</span> Tech
+        <span className="text-[#febe09]">no</span>logy Inno
+        <span className="text-[#febe09]">va</span>tion
+      </a>
+      <p className="text-white text-[9px]">
+        © {new Date().getFullYear()} Hemû maf hatine parastin.
+      </p>
+    </div>
 </footer>
 
 </body>
