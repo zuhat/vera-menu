@@ -6,45 +6,41 @@
 }
 
 body {
-  background: #f4f6fb;
+  background: #f3f5f9;
   color: #222;
-  overflow-x: hidden;
 }
 
 /* HERO */
 .hero {
   height: 180px;
-  background: linear-gradient(135deg, #111, #333);
-  color: white;
+  background: linear-gradient(135deg, #0d0d0d, #2c2c2c);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-content {
   text-align: center;
 }
 
 .logo img {
-  width: 55px;
-  height: 55px;
-  object-fit: cover;
-  border-radius: 12px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
   background: white;
-  padding: 4px;
-  margin-bottom: 6px;
+  padding: 6px;
+  border-radius: 16px;
 }
 
-.hero h1 {
-  font-size: 20px;
-  font-weight: 600;
+.subtitle {
+  margin-top: 8px;
+  color: #ccc;
+  font-size: 13px;
 }
 
-.hero p {
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-/* WRAPPER = MOBILE FIRST GRID */
+/* WRAPPER GRID */
 .wrapper {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: -20px auto 20px;
   padding: 10px;
 
@@ -53,41 +49,40 @@ body {
   gap: 12px;
 }
 
-/* MENU CARD */
-.menu-section {
+/* CARD */
+.card {
   background: white;
-  border-radius: 14px;
-  padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
 }
 
-/* title */
-.menu-section h2 {
-  font-size: 14px;
-  margin-bottom: 8px;
-  padding-left: 8px;
-  border-left: 3px solid #ff6b6b;
+.card h2 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  border-left: 4px solid #ff5a5f;
+  padding-left: 10px;
 }
 
-/* ITEMS */
-.items {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* ITEM ROW */
+/* ITEM */
 .item {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
   padding: 6px 0;
+  font-size: 13px;
   border-bottom: 1px dashed #eee;
 }
 
 .item b {
-  color: #ff6b6b;
-  font-size: 13px;
+  color: #ff5a5f;
+}
+
+/* PREMIUM TEXT */
+.premium .desc {
+  font-size: 12px;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.4;
 }
 
 /* FOOTER */
@@ -95,47 +90,35 @@ footer {
   text-align: center;
   font-size: 11px;
   opacity: 0.5;
-  padding: 10px;
+  padding: 15px;
 }
 
-/* ========================= */
-/* 📱 SMALL PHONE OPTIMIZATION */
-/* ========================= */
-@media (max-width: 480px) {
-
-  .hero {
-    height: 150px;
-  }
-
-  .hero h1 {
-    font-size: 18px;
-  }
-
-  .menu-section {
-    padding: 10px;
-  }
-
-  .item {
-    font-size: 12px;
-  }
-}
-
-/* ========================= */
-/* 📱 LANDSCAPE / TABLET */
-/* ========================= */
+/* TABLET */
 @media (min-width: 700px) {
-
   .wrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* ========================= */
-/* 💻 DESKTOP */
-/* ========================= */
+/* DESKTOP */
 @media (min-width: 1000px) {
-
   .wrapper {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+  .hero {
+    height: 150px;
+  }
+
+  .logo img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .item {
+    font-size: 12px;
   }
 }
