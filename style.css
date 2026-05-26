@@ -1,3 +1,6 @@
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -10,38 +13,54 @@ body {
   color: #222;
 }
 
-/* HERO */
+/* =========================
+   HERO (FULL LOGO BACKGROUND)
+========================= */
 .hero {
-  height: 180px;
-  background: linear-gradient(135deg, #0d0d0d, #2c2c2c);
+  height: 220px;
+  position: relative;
+
+  background-image: url("logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hero-content {
+/* dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+/* hero content */
+.overlay {
+  position: relative;
+  z-index: 2;
   text-align: center;
 }
 
-.logo img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  background: white;
-  padding: 6px;
-  border-radius: 16px;
-}
-
+/* subtitle only */
 .subtitle {
-  margin-top: 8px;
-  color: #ccc;
-  font-size: 13px;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 999px;
 }
 
-/* WRAPPER GRID */
+/* =========================
+   WRAPPER (RESPONSIVE GRID)
+========================= */
 .wrapper {
   max-width: 1100px;
-  margin: -20px auto 20px;
+  margin: -20px auto 30px;
   padding: 10px;
 
   display: grid;
@@ -49,7 +68,9 @@ body {
   gap: 12px;
 }
 
-/* CARD */
+/* =========================
+   CARD DESIGN
+========================= */
 .card {
   background: white;
   border-radius: 16px;
@@ -57,18 +78,21 @@ body {
   box-shadow: 0 8px 18px rgba(0,0,0,0.06);
 }
 
+/* section title */
 .card h2 {
   font-size: 15px;
   margin-bottom: 10px;
-  border-left: 4px solid #ff5a5f;
   padding-left: 10px;
+  border-left: 4px solid #ff5a5f;
 }
 
-/* ITEM */
+/* =========================
+   MENU ITEM
+========================= */
 .item {
   display: flex;
   justify-content: space-between;
-  padding: 6px 0;
+  padding: 7px 0;
   font-size: 13px;
   border-bottom: 1px dashed #eee;
 }
@@ -77,7 +101,15 @@ body {
   color: #ff5a5f;
 }
 
-/* PREMIUM TEXT */
+/* highlight row (orta boy pizza gibi) */
+.highlight {
+  background: #fff5f5;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+/* description text (kahvaltı vs) */
 .premium .desc {
   font-size: 12px;
   color: #555;
@@ -85,7 +117,14 @@ body {
   line-height: 1.4;
 }
 
-/* FOOTER */
+/* divider */
+.divider {
+  height: 8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   font-size: 11px;
@@ -93,32 +132,38 @@ footer {
   padding: 15px;
 }
 
-/* TABLET */
+/* =========================
+   TABLET
+========================= */
 @media (min-width: 700px) {
   .wrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* DESKTOP */
+/* =========================
+   DESKTOP
+========================= */
 @media (min-width: 1000px) {
   .wrapper {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-/* MOBILE OPTIMIZATION */
+/* =========================
+   MOBILE FIX
+========================= */
 @media (max-width: 480px) {
   .hero {
-    height: 150px;
-  }
-
-  .logo img {
-    width: 65px;
-    height: 65px;
+    height: 170px;
+    background-size: 85%;
   }
 
   .item {
     font-size: 12px;
+  }
+
+  .card h2 {
+    font-size: 14px;
   }
 }
