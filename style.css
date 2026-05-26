@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -11,11 +9,10 @@
 body {
   background: #f3f5f9;
   color: #222;
+  padding-bottom: 60px; /* bottom bar space */
 }
 
-/* =========================
-   HERO (FULL LOGO BACKGROUND)
-========================= */
+/* HERO FULL LOGO */
 .hero {
   height: 220px;
   position: relative;
@@ -26,8 +23,9 @@ body {
   background-size: contain;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  padding-bottom: 16px;
 }
 
 /* dark overlay */
@@ -38,14 +36,13 @@ body {
   background: rgba(0,0,0,0.55);
 }
 
-/* hero content */
+/* content */
 .overlay {
   position: relative;
   z-index: 2;
   text-align: center;
 }
 
-/* subtitle only */
 .subtitle {
   color: #fff;
   font-size: 14px;
@@ -55,12 +52,10 @@ body {
   border-radius: 999px;
 }
 
-/* =========================
-   WRAPPER (RESPONSIVE GRID)
-========================= */
+/* WRAPPER */
 .wrapper {
   max-width: 1100px;
-  margin: -20px auto 30px;
+  margin: -20px auto 20px;
   padding: 10px;
 
   display: grid;
@@ -68,9 +63,7 @@ body {
   gap: 12px;
 }
 
-/* =========================
-   CARD DESIGN
-========================= */
+/* CARD */
 .card {
   background: white;
   border-radius: 16px;
@@ -78,17 +71,15 @@ body {
   box-shadow: 0 8px 18px rgba(0,0,0,0.06);
 }
 
-/* section title */
+/* TITLE */
 .card h2 {
   font-size: 15px;
   margin-bottom: 10px;
-  padding-left: 10px;
   border-left: 4px solid #ff5a5f;
+  padding-left: 10px;
 }
 
-/* =========================
-   MENU ITEM
-========================= */
+/* ITEM */
 .item {
   display: flex;
   justify-content: space-between;
@@ -101,7 +92,7 @@ body {
   color: #ff5a5f;
 }
 
-/* highlight row (orta boy pizza gibi) */
+/* highlight */
 .highlight {
   background: #fff5f5;
   padding: 10px;
@@ -109,7 +100,7 @@ body {
   margin-top: 5px;
 }
 
-/* description text (kahvaltı vs) */
+/* description */
 .premium .desc {
   font-size: 12px;
   color: #555;
@@ -117,42 +108,39 @@ body {
   line-height: 1.4;
 }
 
-/* divider */
-.divider {
-  height: 8px;
-}
+/* FOOTER (STICKY BAR) */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 
-/* =========================
-   FOOTER
-========================= */
-footer {
+  background: rgba(20,20,20,0.95);
+  color: #fff;
+
   text-align: center;
   font-size: 11px;
-  opacity: 0.5;
-  padding: 15px;
+  padding: 12px;
+
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* =========================
-   TABLET
-========================= */
+/* TABLET */
 @media (min-width: 700px) {
   .wrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* =========================
-   DESKTOP
-========================= */
+/* DESKTOP */
 @media (min-width: 1000px) {
   .wrapper {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-/* =========================
-   MOBILE FIX
-========================= */
+/* MOBILE */
 @media (max-width: 480px) {
   .hero {
     height: 170px;
@@ -161,9 +149,5 @@ footer {
 
   .item {
     font-size: 12px;
-  }
-
-  .card h2 {
-    font-size: 14px;
   }
 }
